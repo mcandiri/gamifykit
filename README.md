@@ -4,7 +4,8 @@
 
 [![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![CI](https://github.com/gamifykit/gamifykit/actions/workflows/ci.yml/badge.svg)](https://github.com/gamifykit/gamifykit/actions)
+[![CI](https://github.com/mcandiri/gamifykit/actions/workflows/ci.yml/badge.svg)](https://github.com/mcandiri/gamifykit/actions)
+[![Tests](https://img.shields.io/badge/tests-161%20passed-brightgreen)](https://github.com/mcandiri/gamifykit/actions)
 
 ---
 
@@ -376,6 +377,29 @@ POST /api/game/{userId}/boost            — Activate boost
 GET  /api/game/{userId}/wallet           — Wallet balance
 POST /api/game/{userId}/purchase         — Purchase reward
 GET  /api/game/analytics                 — Engagement insights
+```
+
+---
+
+## Getting Started (Development)
+
+```bash
+# Clone the repository
+git clone https://github.com/mcandiri/gamifykit.git
+cd gamifykit
+
+# Restore dependencies
+dotnet restore
+
+# Build the solution
+dotnet build
+
+# Run all tests (161 tests)
+dotnet test
+
+# Run the sample API
+dotnet run --project samples/GameifyKit.SampleApi
+# Open http://localhost:5000/swagger
 ```
 
 ---
