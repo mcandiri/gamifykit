@@ -1,6 +1,6 @@
 # GameifyKit
 
-> Complete gamification engine for .NET — XP, levels, achievements, quests, streaks, tiered leaderboards, virtual economy, and analytics in one NuGet package.
+> Gamification toolkit for .NET — XP, levels, achievements, quests, streaks, tiered leaderboards, virtual economy, and analytics.
 
 [![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4)](https://dotnet.microsoft.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -11,14 +11,14 @@
 
 ## Why GameifyKit?
 
-Every app wants engagement. Every team rebuilds the same XP system, leaderboard, and achievement logic from scratch. GameifyKit gives you a **production-tested engine** in 3 lines of setup.
+Most apps that want engagement end up rebuilding XP, leaderboards, and achievements from scratch. GameifyKit packages those building blocks so you don't have to.
 
-- **One package** — XP, levels, achievements, quests, streaks, leaderboards, economy, analytics, anti-cheat
-- **3 lines to start** — `AddGameifyKit()` with sensible defaults
+- **Single package** — XP, levels, achievements, quests, streaks, leaderboards, economy, analytics, anti-cheat
+- **Quick setup** — `AddGameifyKit()` with sensible defaults
 - **Storage-agnostic** — InMemory, SQL Server, or PostgreSQL out of the box
 - **Event-driven** — React to level-ups, achievements, and tier changes in real-time
 - **Thread-safe** — Built for concurrent workloads
-- **Fully tested** — Every public method has a test
+- **High test coverage** — Core systems (XP calculation, achievement rules, streak logic, leaderboard ranking) are well-tested
 
 ---
 
@@ -266,6 +266,23 @@ options.OnEvent<TierChangeEvent>(async e =>
 
 ---
 
+## What This Is (and Isn't)
+
+GameifyKit is a **library**, not a platform. It gives you the building blocks:
+
+- XP calculation, leveling curves, achievement rules, streak tracking, leaderboards
+- You own the storage, the UI, and the integration
+
+It does NOT:
+
+- Provide a ready-made UI or dashboard
+- Replace dedicated platforms like Badgeville or Bunchball
+- Try to be a one-size-fits-all gamification SaaS
+
+If you need a simple, testable gamification layer inside your existing .NET app — that's what this is for.
+
+---
+
 ## Player Profile
 
 Get a complete player state in a single call:
@@ -324,9 +341,9 @@ Database stores auto-create tables (prefixed with `GameifyKit_`) on first use.
 
 ---
 
-## Born From Production
+## Background
 
-> GameifyKit was extracted from the gamification system powering an enterprise education platform serving **1,500+ students**. The XP curves, streak mechanics, and anti-cheat rules were all refined based on real student behavior data over 4+ years.
+> Built to increase student engagement on an education platform serving 1,500+ students. XP, streaks, and achievements were added incrementally based on what actually moved retention metrics — not as a monolithic "gamification framework" designed upfront.
 
 ---
 
@@ -339,8 +356,6 @@ Database stores auto-create tables (prefixed with `GameifyKit_`) on first use.
 | Push notifications | Your notification service |
 | UI components | Your frontend framework |
 | Real-money transactions | Payment processing service |
-
-**GameifyKit is the engine. You build the experience.**
 
 ---
 
